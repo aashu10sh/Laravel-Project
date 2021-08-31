@@ -33,7 +33,7 @@
                 <div class="card-body p-5">
                   <h2 class="text-uppercase text-center mb-5">Create an account</h2>
 
-                  <form method="post" action="/login">
+                  <form method="post" action="/login" enctype="multipart/form-data">
                     @csrf
 
                     <div class="form-outline mb-4">
@@ -68,6 +68,9 @@
                       </label>
                     </div>
 
+                      <label class="form-label" for="customFile">Default file input example</label>
+                      <input type="file" name="photo" class="form-control" id="customFile" />
+                      <br>
                     <div class="d-flex justify-content-center">
                       <button type="submit"  class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Register</button>
                     </div>
