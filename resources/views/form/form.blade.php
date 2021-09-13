@@ -33,11 +33,11 @@
                 <div class="card-body p-5">
                   <h2 class="text-uppercase text-center mb-5">Create an account</h2>
 
-                  <form method="post" action="/login">
+                  <form method="post" action="/form">
                     @csrf
 
                     <div class="form-outline mb-4">
-                      <input type="text" id="form3Example1cg" name="username" class="form-control form-control-lg" />
+                      <input type="text" id="form3Example1cg" name="name" class="form-control form-control-lg" />
                       <label class="form-label" for="form3Example1cg">Your Name</label>
                     </div>
 

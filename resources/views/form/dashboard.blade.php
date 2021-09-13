@@ -7,6 +7,12 @@
     <title>Document</title>
 </head>
 <body>
-    <h1> {{ "Welcome Back $username "}} </h1>
+    <h1> {{ "ADDED USER $name "}} </h1>
+    @foreach($registers as $item)
+        <tr>
+{{--            <td>{{ $loop->iteration }}</td>--}}
+            <td>{{ $item->name }}</td><br><td>{{ $item->email }}</td><br><td>{{ $item->password }}</td>
+        </tr>
+    @endforeach
 </body>
 </html>

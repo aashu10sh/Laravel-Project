@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ExampleController;
-use App\Http\Controllers\HomeController;
+use App\Http\Controllers\RegisterController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -61,9 +61,6 @@ Route::get('/replace/{string1}/{string2}',function ($string1,$string2)
 });
 
 Route::get('/killer/{id}',[ExampleController::class,'index']);
+Route::resource('/form',RegisterController::class);
 
-Route::get('/form',[\App\Http\Controllers\HomeController::class,'index']);
-
-Route::get('/login',[HomeController::class,'send_back']);
-Route::post('/login',[HomeController::class,'login']);
 
