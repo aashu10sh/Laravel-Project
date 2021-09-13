@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
@@ -25,8 +27,20 @@ class HomeController extends Controller
             }
         else
         {
-            return view('form.dashboard', compact('username'));
+            DB::table('registers')->insert([
+                'username'=>$username,
+                'email' => $email,
+                'password'=> $password,
+                'created_at'=> Carbon::now(),
+                'updated_at'=>Carbon::now()
+            ]);
+
         }
+    }
+    public function indexd()
+    {
+        $users = DB::table('registers')->get();
+        return view('users', compact('users'));
     }
 
     protected function send_back(Request $request)
