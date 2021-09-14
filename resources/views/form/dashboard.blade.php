@@ -7,11 +7,23 @@
     <title>Document</title>
 </head>
 <body>
-    <h1> {{ "ADDED USER $name "}} </h1>
+@if(isset($name))
+    <h1> {{ "Added User $name" }} </h1>
+@else
+    <h1>SHOWING ALL AVAILABE DATA's</h1>
+    @endif
+
     @foreach($registers as $item)
         <tr>
 {{--            <td>{{ $loop->iteration }}</td>--}}
-            <td>{{ $item->name }}</td><br><td>{{ $item->email }}</td><br><td>{{ $item->password }}</td>
+            <td>{{ " name : $item->name" }}</td>
+            <br>
+            <td>{{ " email : $item->email" }}</td>
+            <br>
+            <td>{{ "password: $item->password" }}</td>
+            <br>
+            <br>
+            <br>
         </tr>
     @endforeach
 </body>

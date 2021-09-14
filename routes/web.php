@@ -62,5 +62,6 @@ Route::get('/replace/{string1}/{string2}',function ($string1,$string2)
 
 Route::get('/killer/{id}',[ExampleController::class,'index']);
 Route::resource('/form',RegisterController::class);
+Route::get('/show',[RegisterController::class,'create']);
 
 

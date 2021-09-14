@@ -24,6 +24,9 @@ class RegisterController extends Controller
      */
     public function create()
     {
+        $perPage = 25;
+        $registers = Register::latest()->paginate($perPage);
+        return view('form.dashboard',compact('registers'));
         //
     }
 
